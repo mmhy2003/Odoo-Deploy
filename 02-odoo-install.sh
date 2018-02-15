@@ -125,7 +125,7 @@ if [ $IS_ENTERPRISE = "True" ]; then
 fi
 
 echo -e "\n---- Install python packages ----"
-sudo -H pip3 install -r $OE_HOME/$OE_CONFIG/requirement.txt
+sudo -H pip3 install -r $OE_HOME/$OE_CONFIG/requirements.txt
 sudo -H pip3 install phonenumbers
 
 echo -e "\n---- Create custom module directory ----"
