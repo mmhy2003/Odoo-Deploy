@@ -63,9 +63,12 @@ echo -e "\n---- Install tool packages ----"
 sudo apt install wget git gdebi -yV
 sudo apt install libsasl2-dev python-dev libldap2-dev libssl-dev -yV
 sudo apt install python-dev libxml2-dev libxslt1-dev zlib1g-dev -yV
+sudo apt install python3-suds -yV
 
 echo -e "\n--- Install less compiler"
 sudo apt install nodejs npm -yV
+sudo apt install node-clean-css -yV
+sudo apt install node-less -yV
 sudo npm install -g less less-plugin-clean-css
 
 #--------------------------------------------------
