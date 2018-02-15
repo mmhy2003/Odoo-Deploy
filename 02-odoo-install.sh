@@ -143,24 +143,24 @@ db_host = $POSTGRES_SERVER
 db_port = $POSTGRES_PORT
 db_user = $POSTGRES_USER
 db_password = $POSTGRES_PASS
-logfile = /var/log/$OE_USER/$OE_CONFIG.log
-if [ $IS_ENTERPRISE = "True" ]; then
-addons_path = $OE_HOME/enterprise
-             ,$OE_HOME/$OE_CONFIG/addons
-             ,$OE_HOME/$OE_CONFIG/odoo/addons
-             ,$OE_HOME/modules
-else
-addons_path = $OE_HOME/$OE_CONFIG/addons
-             ,$OE_HOME/$OE_CONFIG/odoo/addons
-             ,$OE_HOME/modules
-fi
 xmlrpc_port = $OE_PORT
 ;dbfilter = ^%d$
 ;proxy_mode = True
+logfile = /var/log/$OE_USER/$OE_CONFIG.log
 EOF
 sudo mv ~/${OE_CONFIG}.conf /etc/${OE_CONFIG}.conf
 sudo chown $OE_USER:$OE_USER /etc/${OE_CONFIG}.conf
 sudo chmod 640 /etc/${OE_CONFIG}.conf
+if [ $IS_ENTERPRISE = "True" ]; then
+    sudo su odoo -c "echo 'addons_path = $OE_HOME/enterprise
+             ,$OE_HOME/$OE_CONFIG/addons
+             ,$OE_HOME/$OE_CONFIG/odoo/addons
+             ,$OE_HOME/modules'" >> /etc/${OE_CONFIG}.conf
+else
+    sudo su odoo -c "echo 'addons_path = $OE_HOME/$OE_CONFIG/addons
+             ,$OE_HOME/$OE_CONFIG/odoo/addons
+             ,$OE_HOME/modules'" >> /etc/${OE_CONFIG}.conf
+fi
 
 echo -e "* Create startup file"
 sudo su root -c "echo '#!/bin/sh' >> $OE_HOME_EXT/start.sh"
