@@ -15,7 +15,8 @@
 #######################################################################################################
 
 ##fixed parameters
-OE_USER="odoo"
+DB_USER="odoo"
+DB_PASS="odoo"
 
 #--------------------------------------------------
 # Update Server
@@ -31,4 +32,5 @@ echo -e "\n---- Install PostgreSQL Server ----"
 sudo apt install postgresql postgresql-server-dev-all -yV
 
 echo -e "\n---- Creating the Odoo PostgreSQL User  ----"
-sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
+sudo su - postgres -c "createuser -s $DB_USER" 2> /dev/null || true
+sudo su - postgres -c "psql -c \"ALTER USER $DB_USER WITH PASSWORD '$DB_PASS';\""
