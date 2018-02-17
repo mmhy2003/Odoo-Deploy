@@ -46,6 +46,7 @@ upstream odoo {
 }
 upstream odoochat {
         server $OE_HOST:8072 weight=1 fail_timeout=0;
+        #server <SECOND-SERVER>:8072 weight=1 fail_timeout=0;
 }
 
 # http -> https
