@@ -7,11 +7,11 @@
 # This script will install Postgres on your Ubuntu 16.04 server.
 #-----------------------------------------------------------------------------------------------------
 # Make a new file:
-# sudo nano postgres_install.sh
+# sudo nano 01-postgres-install.sh
 # Place this content in it and then make the file executable:
-# sudo chmod +x postgres_install.sh
+# sudo chmod +x 01-postgres-install.sh
 # Execute the script to install Postgres:
-# sudo ./postgres_install.sh
+# sudo ./01-postgres-install.sh
 #######################################################################################################
 
 ##fixed parameters

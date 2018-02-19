@@ -2,14 +2,13 @@
 ###################################################################
 # Script for installing nginx for odoo on Ubuntu 16.04
 # Author: Mohamed Hammad
-# Maintainer: SLNEE
 # -----------------------------------------------------------------
 # Make a new file:
-# sudo nano odoo_nginx_install.sh
+# sudo nano 03-nginx-install.sh
 # Place this content in it and then make the file executable:
-# sudo chmod +x odoo_nginx_install.sh
+# sudo chmod +x 03-nginx-install.sh
 # Execute the script to install nginx:
-# sudo ./odoo_nginx_install.sh
+# sudo ./03-nginx-install.sh
 ###################################################################
 
 OE_DOMAIN="odoo.com *.odoo.com"

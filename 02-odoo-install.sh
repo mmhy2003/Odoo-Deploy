@@ -8,11 +8,11 @@
 # in one Ubuntu because of the different xmlrpc_ports
 #-----------------------------------------------------------------------------------------------------
 # Make a new file:
-# sudo nano odoo_install.sh
+# sudo nano 02-odoo-install.sh
 # Place this content in it and then make the file executable:
-# sudo chmod +x odoo_install.sh
+# sudo chmod +x 02-odoo-install.sh
 # Execute the script to install Odoo:
-# sudo ./odoo_install.sh
+# sudo ./02-odoo-install.sh
 #######################################################################################################
 
 ##fixed parameters
